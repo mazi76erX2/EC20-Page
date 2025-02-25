@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
 export interface MenuItem {
-    label: string;
-    href: string;
+  label: string;
+  href: string;
 }
 
 export interface Feature {
-    icon: React.ReactNode;
-    title: string;
-    description: string;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
 }

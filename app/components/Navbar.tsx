@@ -1,26 +1,27 @@
 "use client";
 
-import { useState } from 'react';
-import { Menu, X, Wallet } from 'lucide-react';
-import { MenuItem } from '../types';
+import { useState } from "react";
+import { Menu, X, Wallet } from "lucide-react";
+import { MenuItem } from "../types";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const menuItems: MenuItem[] = [
-    { label: 'Home', href: '/' },
-    { label: 'Learn', href: '/learn' },
-    { label: 'Tokens', href: '#' },
-    { label: 'Trading', href: '#' }
+    { label: "Home", href: "/" },
+    { label: "Learn", href: "/learn" },
+    { label: "Tokens", href: "#" },
+    { label: "Trading", href: "#" },
   ];
 
   return (
     <nav className="bg-gray-900 fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-white font-bold text-xl">Mazi's Token Hub</span>
+            <span className="text-white font-bold text-xl">
+              Mazi's Token Hub
+            </span>
           </div>
 
           <div className="hidden md:block">
@@ -33,10 +34,10 @@ const Navbar: React.FC = () => {
                 >
                   {item.label}
                 </a>
-              ))}a
+              ))}
+              a
             </div>
           </div>
-
 
           <div className="md:hidden">
             <button
