@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-400 hover:text-white p-2"
             >
-              {isOpen ? 'X': '☰'}
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
