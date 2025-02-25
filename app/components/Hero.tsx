@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <div className="relative bg-gray-900 pt-16">
+    <div className="bg-gray-900 pt-16">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-800 pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pb-32">
         <div className="text-center">

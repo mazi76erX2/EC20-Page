@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
 
   const menuItems: MenuItem[] = [
     { label: "Home", href: "/" },
-    { label: "Learn", href: "/learn" },
+    { label: "Learn", href: "#" },
     { label: "Tokens", href: "#" },
     { label: "Trading", href: "#" },
   ];
