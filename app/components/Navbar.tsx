@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, Wallet } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { MenuItem } from "../types";
+import React from "react"; // Make sure React is imported
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -20,7 +21,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <span className="text-white font-bold text-xl">
-              Mazi's Token Hub
+              Mazi&apos;s Token Hub
             </span>
           </div>
 
