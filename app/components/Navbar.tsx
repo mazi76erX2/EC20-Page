@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X, Wallet, Bell, ChevronDown, User, Moon, Sun } from "lucide-react";
+import { Menu, X, Bell, ChevronDown, User, Moon, Sun } from "lucide-react";
 import { MenuItem } from "../types";
 
 
@@ -148,11 +148,6 @@ const Navbar: React.FC = () => {
             <button className="flex items-center text-gray-300 hover:text-white">
               <User className="h-5 w-5 mr-1" />
               <span className="text-sm font-medium">Account</span>
-            </button>
-            
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-1.5 rounded-md text-sm font-medium hover:from-blue-700 hover:to-indigo-700 transition-colors flex items-center">
-              <Wallet className="mr-2 h-4 w-4" />
-              Connect
             </button>
           </div>
 
