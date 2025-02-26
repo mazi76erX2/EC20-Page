@@ -4,13 +4,12 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Bell, ChevronDown, User, Moon, Sun } from "lucide-react";
 import { MenuItem } from "../types";
 
-
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
-  const [notifications, setNotifications] = useState<number>(3);
+  const [notifications] = useState<number>(3);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,40 +25,40 @@ const Navbar: React.FC = () => {
   }, []);
 
   const menuItems: MenuItem[] = [
-    { 
-      label: "Home", 
-      href: "/" 
+    {
+      label: "Home",
+      href: "/",
     },
-    { 
-      label: "Exchange", 
+    {
+      label: "Exchange",
       href: "#",
       submenu: [
         { label: "Spot Trading", href: "#" },
         { label: "Margin Trading", href: "#" },
-        { label: "Liquidity Pools", href: "#" }
-      ]
+        { label: "Liquidity Pools", href: "#" },
+      ],
     },
-    { 
-      label: "Markets", 
+    {
+      label: "Markets",
       href: "#",
       submenu: [
         { label: "Top Gainers", href: "#" },
         { label: "New Listings", href: "#" },
-        { label: "Market Cap", href: "#" }
-      ]
+        { label: "Market Cap", href: "#" },
+      ],
     },
-    { 
-      label: "Earn", 
+    {
+      label: "Earn",
       href: "#",
       submenu: [
         { label: "Staking", href: "#" },
         { label: "Yield Farming", href: "#" },
-        { label: "Referral Program", href: "#" }
-      ]
+        { label: "Referral Program", href: "#" },
+      ],
     },
-    { 
-      label: "Learn", 
-      href: "#" 
+    {
+      label: "Learn",
+      href: "#",
     },
   ];
 
@@ -72,7 +71,9 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-lg" : "bg-transparent"}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -90,16 +91,22 @@ const Navbar: React.FC = () => {
                 <div key={item.label} className="relative">
                   {item.submenu ? (
                     <div>
-                      <button 
+                      <button
                         onClick={() => toggleDropdown(item.label)}
                         className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
                       >
                         {item.label}
-                        <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === item.label ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === item.label ? "rotate-180" : ""}`}
+                        />
                       </button>
                       {dropdownOpen === item.label && (
                         <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 z-50">
-                          <div className="py-1" role="menu" aria-orientation="vertical">
+                          <div
+                            className="py-1"
+                            role="menu"
+                            aria-orientation="vertical"
+                          >
                             {item.submenu.map((subitem) => (
                               <a
                                 key={subitem.label}
@@ -127,13 +134,17 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-4">
-            <button 
+            <button
               className="text-gray-400 hover:text-white"
               onClick={() => setDarkMode(!darkMode)}
             >
-              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {darkMode ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
             </button>
-            
+
             <div className="relative">
               <button className="text-gray-400 hover:text-white">
                 <Bell className="h-5 w-5" />
@@ -144,7 +155,7 @@ const Navbar: React.FC = () => {
                 )}
               </button>
             </div>
-            
+
             <button className="flex items-center text-gray-300 hover:text-white">
               <User className="h-5 w-5 mr-1" />
               <span className="text-sm font-medium">Account</span>
@@ -171,13 +182,15 @@ const Navbar: React.FC = () => {
                 <div key={item.label} className="relative">
                   {item.submenu ? (
                     <div>
-                      <button 
+                      <button
                         onClick={() => toggleDropdown(item.label)}
                         className="w-full text-left text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                       >
                         <div className="flex justify-between items-center">
                           {item.label}
-                          <ChevronDown className={`h-5 w-5 transition-transform ${dropdownOpen === item.label ? 'rotate-180' : ''}`} />
+                          <ChevronDown
+                            className={`h-5 w-5 transition-transform ${dropdownOpen === item.label ? "rotate-180" : ""}`}
+                          />
                         </div>
                       </button>
                       {dropdownOpen === item.label && (
@@ -205,7 +218,7 @@ const Navbar: React.FC = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="border-t border-gray-700 pt-4 pb-3">
               <div className="flex items-center justify-between px-4">
                 <div className="flex items-center">
@@ -219,11 +232,15 @@ const Navbar: React.FC = () => {
                   <button className="text-gray-400 hover:text-white">
                     <Bell className="h-6 w-6" />
                   </button>
-                  <button 
+                  <button
                     className="text-gray-400 hover:text-white"
                     onClick={() => setDarkMode(!darkMode)}
                   >
-                    {darkMode ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
+                    {darkMode ? (
+                      <Sun className="h-6 w-6" />
+                    ) : (
+                      <Moon className="h-6 w-6" />
+                    )}
                   </button>
                 </div>
               </div>
